@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\dllfile\Shell]
+[HKEY_CLASSES_ROOT\dllfile\Shell\Register]
+[HKEY_CLASSES_ROOT\dllfile\Shell\Register\Command]
+@="Regsvr32 \"%L\""
+[HKEY_CLASSES_ROOT\dllfile\Shell\Unregister]
+[HKEY_CLASSES_ROOT\dllfile\Shell\Unregister\Command]
+@="Regsvr32 /u \"%L\""
+[HKEY_CLASSES_ROOT\ocxfile\Shell]
+[HKEY_CLASSES_ROOT\ocxfile\Shell\Register]
+[HKEY_CLASSES_ROOT\ocxfile\Shell\Register\Command]
+@="Regsvr32 \"%L\""
+[HKEY_CLASSES_ROOT\ocxfile\Shell\Unregister]
+[HKEY_CLASSES_ROOT\ocxfile\Shell\Unregister\Command]
+@="Regsvr32 /u \"%L\""
+[HKEY_CLASSES_ROOT\.tlb]
+@="typelib"
+[HKEY_CLASSES_ROOT\typelib\shell\Register\command]
+@="regtlib \"%L\""
+[HKEY_CLASSES_ROOT\typelib\shell\Unregister\command]
+@="regtlib -u \"%L\""

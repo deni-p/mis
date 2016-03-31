@@ -1,0 +1,51 @@
+[ Version]
+Signature=$CHICAGO$
+
+[DefaultInstall]
+AddReg=Reg.Settings
+AddReg=Reg.Uninstall
+CopyFiles=Inf.Copy
+
+[DefaultUninstall]
+
+DelReg=Reg.Settings
+DelReg=Reg.Uninstall
+DelFiles=Inf.Copy
+
+[Reg.Settings]
+HKCU,Software\Microsoft\Windows\CurrentVersion\Explorer\
+\User Shell Folders,AppData,0x20000,"%APPDATA%"
+HKCU,Software\Microsoft\Windows\CurrentVersion\Explorer\
+\User Shell Folders,Personal,0x20000,"%PERSONAL%"
+HKCU,Software\Microsoft\Windows\CurrentVersion\Explorer\
+\User Shell Folders,My Pictures,0x20000,"%PICTURES%"
+HKCU,Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell \
+Folders,favorites,0x20000,"%FAVORITES%"
+
+[Reg.Uninstall]
+HKCU,Software\Microsoft\Windows\CurrentVersion\Uninstall\%NAME%
+HKCU,Software\Microsoft\Windows\CurrentVersion\Uninstall\
+\%NAME%,DisplayName,,"%NAME%"
+HKCU,Software\Microsoft\Windows\CurrentVersion\Uninstall\%NAME%,UninstallString\
+,,"Rundll32.exe setupapi.dll,InstallHinfSection DefaultUninstall 132"\
+"%53%\Application Data\Custom\Redirect.inf"
+
+[Inf.Copy]
+Redirect.inf
+
+[DestinationDirs]
+Inf.Copy=53,Application Data\Custom
+
+[SourceDisksNames]
+55=%DISKNAME%
+
+[SourceDisksFiles]
+Redirect.inf=55
+
+[Strings]
+NAME = "Jerry's Redirect Folders"
+APPDATA = "F:\setting\%USERNAME%\Application Data"
+PERSONAL = "F:\setting\%USERNAME%\My Documents"
+PICTURES = "F:\setting\%USERNAME%\My Documents\My Pictures"
+FAVORITES = "F:\setting\%USERNAME%\Favorites"
+DISKNAME = "Setup Files"
